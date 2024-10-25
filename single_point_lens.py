@@ -2,7 +2,7 @@ import numpy as np
 import pygame
 from PIL import Image
 
-FILENAME = ['galaxy.png', 'circle.png', 'odysseus.jpg'][2]
+FILENAME = ['images/galaxy.png', 'images/circle.png', 'images/odysseus.jpg'][2]
 W,H = 1500, 900
 
 
