@@ -2,14 +2,13 @@ import numpy as np
 import pygame
 from PIL import Image
 
-FILENAME = ['images/galaxy.png', 'images/circle.png', 'images/odysseus.jpg'][2]
+FILENAME = ['images/galaxy.png', 'images/circle.png', 'images/odysseus.jpg', 'images/circle2.png'][1]
 W,H = 1500, 900
-
 
 pygame.init()
 screen = pygame.display.set_mode([W, H])
 
-pygame.display.set_caption("Single point lense")
+pygame.display.set_caption("Single point lens")
 
 # scale parameter such that Einstein radius = 1
 SCALE = min(W,H)/3
@@ -104,7 +103,7 @@ def img2source(filename, size=0.2):
 
 
 
-source = img2source(FILENAME, 0.25)
+source = img2source(FILENAME, 0.3)
 
 
 running = True
@@ -122,9 +121,9 @@ while running:
     screen.fill("black")
 
     im1, im2 = lens(source)
+    source.draw(surface)
     im1.draw(surface)
     im2.draw(surface)
-    source.draw(surface)
 
     pygame.draw.circle(surface, "white", xy2pygame(0, 0), SCALE, 2)
     pygame.draw.circle(surface, "white", xy2pygame(0, 0), 3)
